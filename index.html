@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>COMPUTER ENGINEERING</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+</head>
+<body>
+ <button class="toggle-btn" onclick="toggleMenu()">☰</button>
+
+
+<div class="myList" id="menuList">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="firstYear.html">📁 First Year </a>
+      <ul>
+        <a href="#"><li>First semester</li></a>
+        <a href="#"><li>Second semester</li></a>
+      </ul>
+    </li>
+    <li><a href="secndYear.html">📁 Second Year </a>
+      <ul>
+        <a href="#"><li>First semester</li></a>
+        <a href="#"><li>Second semester</li></a>
+      </ul>
+    </li>
+    <li><a href="thirdYear.html">📁 Third Year </a>
+      <ul>
+       <a href="#"><li>First semester</li></a>
+        <a href="#"><li>Second semester</li></a>
+      </ul>
+    </li>
+    <li><a href="fourthYear.html">📁 Fourth Year </a>
+      <ul>
+        <a href="#"><li>First semester</li></a>
+        <a href="#"><li>Second semester</li></a>
+      </ul>
+    </li>
+    <li><a href="fifthYear.html">📁 Fifth Year </a>
+      <ul>
+        <a href="#"><li>First semester</li></a>
+        <a href="#"><li>Second semester</li></a>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="containar">
+  
+      <div class="content">
+            <div class="title"> ✨ Welcome to our website ✨ </div>
+            <div class="subtitle"> here you'll find every thing you want to study our subjectes </div>
+
+              <div class="semesters">
+                <a class="semester" style="--i:1" href="firstYear.html">📘 First</a>
+                <a class="semester" style="--i:5" href="secndYear.html">📙 Second</a>
+                <a class="semester" style="--i:10" href="thirdYear.html">📕 Third</a>
+                <a class="semester" style="--i:15" href="fourthYear.html">📒 Fourth</a>
+                <a class="semester" style="--i:20" href="fifthYear.html">📗 Fifth</a>
+              </div>
+    </div>
+</div>
+  <script>
+    function toggleMenu() {
+    const menu = document.getElementById('menuList');
+    menu.classList.toggle('show');
+  }
+  </script>
+</body>
+</html>

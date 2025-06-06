@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Year</title>
+    <link rel="stylesheet" href="years.css">
+    <style>
+      .subject-list {
+        display: none;
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 10px;
+      }
+      .subject {
+        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        color: #00f7ff;
+        font-size: 1.1rem;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .subject:hover {
+        background-color: #00cfff;
+        color: black;
+      }
+    </style>
+</head>
+<body>  
+  <button class="toggle-btn" onclick="toggleMenu()">☰</button>  <div class="myList" id="menuList">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="firstYear.html">📁 First Year </a>
+        <ul>
+          <a href="#"><li>First semester</li></a>
+          <a href="#"><li>Second semester</li></a>
+        </ul>
+      </li>
+      <li><a href="secndYear.html">📁 Second Year </a>
+        <ul>
+          <a href="#"><li>First semester</li></a>
+          <a href="#"><li>Second semester</li></a>
+        </ul>
+      </li>
+      <li><a href="thirdYear.html">📁 Third Year </a>
+        <ul>
+          <a href="#"><li>First semester</li></a>
+          <a href="#"><li>Second semester</li></a>
+        </ul>
+      </li>
+      <li><a href="fourthYear.html">📁 Fourth Year </a>
+        <ul>
+          <a href="#"><li>First semester</li></a>
+          <a href="#"><li>Second semester</li></a>
+        </ul>
+      </li>
+      <li><a href="fifthYear.html">📁 Fifth Year </a>
+        <ul>
+          <a href="#"><li>First semester</li></a>
+          <a href="#"><li>Second semester</li></a>
+        </ul>
+      </li>
+    </ul>
+  </div>  <div class="containar">
+    <h1>First Year</h1><div class="semester" onclick="toggleSubjects('sem1')">📘 First Semester</div>
+<div id="sem1" class="subject-list">
+  <div class="subject">اللغة العربية (نحو وصرف)</div>
+  <div class="subject">مقدمة في الهندسة</div>
+  <div class="subject">منهجية بحث علمي</div>
+  <div class="subject">رسم هندسي</div>
+  <div class="subject">تفاضل وتكامل أ</div>
+  <div class="subject">فيزياء عامة عملية أ</div>
+  <div class="subject">فيزياء عامة أ</div>
+  <div class="subject">قرآن کریم (1)</div>
+  <div class="subject">دراسات في الفقه</div>
+</div>
+
+<div class="semester" onclick="toggleSubjects('sem2')">📙 Second Semester</div>
+<div id="sem2" class="subject-list">
+  <div class="subject">كيمياء عامة</div>
+  <div class="subject">تقنية الورش</div>
+  <div class="subject">مقدمة في الحاسبات</div>
+  <div class="subject">لغة إنجليزية تقنية</div>
+  <div class="subject">دراسات في السيرة</div>
+  <div class="subject">تفاضل وتكامل (ب)</div>
+  <div class="subject">فيزياء عامة (ب)</div>
+</div>
+
+  </div>  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuList');
+      menu.classList.toggle('show');
+    }
+
+    function toggleSubjects(id) {
+      const element = document.getElementById(id);
+      const allLists = document.querySelectorAll('.subject-list');
+      allLists.forEach(list => {
+        if (list !== element) list.style.display = 'none';
+      });
+      element.style.display = element.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script></body>
+</html>
