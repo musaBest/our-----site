@@ -6,32 +6,30 @@
   <title>Fifth Year</title>
   <link rel="stylesheet" href="years.css" />
   <style>
-    .semester-section {
-      margin-top: 20px;
-      display: none;
-    }
-
-    .semester-btn {
-      display: block;
-      margin: 10px 0;
-      padding: 10px;
-      background-color: #f2f2f2;
-      border: none;
-      cursor: pointer;
-      font-size: 18px;
-      text-align: left;
-    }
-
     .subject-list {
-      margin-left: 20px;
-      margin-top: 5px;
-      line-height: 1.6;
+      display: none;
+      flex-direction: column;
+      margin-top: 10px;
+      gap: 10px;
+    }
+    .subject {
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      color: #00f7ff;
+      font-size: 1.1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .subject:hover {
+      background-color: #00cfff;
+      color: black;
     }
   </style>
 </head>
 <body>
   <button class="toggle-btn" onclick="toggleMenu()">☰</button>
-
   <div class="myList" id="menuList">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -71,42 +69,39 @@
   <div class="containar">
     <h1>Fifth Year</h1>
 
-    <button class="semester-btn" onclick="toggleSemester('first-sem')">📘 First Semester</button>
-    <div class="semester-section" id="first-sem">
-      <div class="subject-list">
-        <ul>
-          <li>حاضر العالم الإسلامي</li>
-          <li>تدريب عملي (250) ساعة</li>
-          <li>مشروع تخرج (1)</li>
-          <li>مساق اختياري (1)</li>
-          <li>مساق اختياري (2)</li>
-          <li>دراسات فلسطينية</li>
-        </ul>
-      </div>
+    <div class="semester" onclick="toggleSubjects('sem1')">📘 First Semester</div>
+    <div id="sem1" class="subject-list">
+      <div class="subject">حاضر العالم الإسلامي</div>
+      <div class="subject">تدريب عملي (250) ساعة</div>
+      <div class="subject">مشروع تخرج (1)</div>
+      <div class="subject">مساق اختياري (1)</div>
+      <div class="subject">مساق اختياري (2)</div>
+      <div class="subject">دراسات فلسطينية</div>
     </div>
 
-    <button class="semester-btn" onclick="toggleSemester('second-sem')">📗 Second Semester</button>
-    <div class="semester-section" id="second-sem">
-      <div class="subject-list">
-        <ul>
-          <li>مشروع تخرج (2)</li>
-          <li>دراسات في الحديث الشريف</li>
-          <li>مساق اختياري (3)</li>
-          <li>مساق اختياري (4)</li>
-        </ul>
-      </div>
+    <div class="semester" onclick="toggleSubjects('sem2')">📙 Second Semester</div>
+    <div id="sem2" class="subject-list">
+      <div class="subject">مشروع تخرج (2)</div>
+      <div class="subject">دراسات في الحديث الشريف</div>
+      <div class="subject">مساق اختياري (3)</div>
+      <div class="subject">مساق اختياري (4)</div>
     </div>
   </div>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('menuList');
-      menu.classList.toggle('show');
+      const menu = document.getElementById("menuList");
+      menu.classList.toggle("show");
     }
 
-    function toggleSemester(id) {
-      const section = document.getElementById(id);
-      section.style.display = section.style.display === 'block' ? 'none' : 'block';
+    function toggleSubjects(id) {
+      const element = document.getElementById(id);
+      const allLists = document.querySelectorAll(".subject-list");
+      allLists.forEach((list) => {
+        if (list !== element) list.style.display = "none";
+      });
+      element.style.display =
+        element.style.display === "flex" ? "none" : "flex";
     }
   </script>
 </body>

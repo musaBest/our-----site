@@ -1,65 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Second Year</title>
-  <link rel="stylesheet" href="years.css" />
+  <link rel="stylesheet" href="years.css">
   <style>
-    .semester-section {
-      margin-top: 20px;
-      display: none;
-    }
-
-    .semester-btn {
-      display: block;
-      margin: 10px 0;
-      padding: 10px;
-      background-color: #f2f2f2;
-      border: none;
-      cursor: pointer;
-      font-size: 18px;
-      text-align: left;
-    }
-
     .subject-list {
-      margin-left: 20px;
-      margin-top: 5px;
-      line-height: 1.6;
+      display: none;
+      flex-direction: column;
+      margin-top: 10px;
+      gap: 10px;
+    }
+    .subject {
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      color: #00f7ff;
+      font-size: 1.1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .subject:hover {
+      background-color: #00cfff;
+      color: black;
     }
   </style>
 </head>
 <body>
   <button class="toggle-btn" onclick="toggleMenu()">☰</button>
-
   <div class="myList" id="menuList">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="firstYear.html">📁 First Year</a>
+      <li><a href="firstYear.html">📁 First Year </a>
         <ul>
           <a href="#"><li>First semester</li></a>
           <a href="#"><li>Second semester</li></a>
         </ul>
       </li>
-      <li><a href="secndYear.html">📁 Second Year</a>
+      <li><a href="secndYear.html">📁 Second Year </a>
         <ul>
           <a href="#"><li>First semester</li></a>
           <a href="#"><li>Second semester</li></a>
         </ul>
       </li>
-      <li><a href="thirdYear.html">📁 Third Year</a>
+      <li><a href="thirdYear.html">📁 Third Year </a>
         <ul>
           <a href="#"><li>First semester</li></a>
           <a href="#"><li>Second semester</li></a>
         </ul>
       </li>
-      <li><a href="fourthYear.html">📁 Fourth Year</a>
+      <li><a href="fourthYear.html">📁 Fourth Year </a>
         <ul>
           <a href="#"><li>First semester</li></a>
           <a href="#"><li>Second semester</li></a>
         </ul>
       </li>
-      <li><a href="fifthYear.html">📁 Fifth Year</a>
+      <li><a href="fifthYear.html">📁 Fifth Year </a>
         <ul>
           <a href="#"><li>First semester</li></a>
           <a href="#"><li>Second semester</li></a>
@@ -67,51 +64,42 @@
       </li>
     </ul>
   </div>
-
   <div class="containar">
     <h1>Second Year</h1>
-
-    <button class="semester-btn" onclick="toggleSemester('first-sem')">📘 First Semester</button>
-    <div class="semester-section" id="first-sem">
-      <div class="subject-list">
-        <ul>
-          <li>برمجة حاسوب أ</li>
-          <li>تصميم رقمي تجميعي</li>
-          <li>دوائر كهربائية (1) عملي</li>
-          <li>دوائر كهربائية (1) اتصالات وتحكم</li>
-          <li>متطلب جامعة اختياري</li>
-          <li>قرآن کریم (2)</li>
-          <li>دراسات في القرآن وعلومه</li>
-        </ul>
-      </div>
+    <div class="semester" onclick="toggleSubjects('sem1')">📘 First Semester</div>
+    <div id="sem1" class="subject-list">
+      <div class="subject">البرمجة (1)</div>
+      <div class="subject"> تصميم رقمي تجميعي</div>
+      <div class="subject">متطلب جامعة اختياري</div>
+      <div class="subject"> (1)الدوائر الكهربائية اتصالات وتحكم</div>
+      <div class="subject">  دوائر كهربائية العملية (1) </div>
+      <div class="subject">دراسات في القرآن وعلومه</div>
+      <div class="subject">قرآن كريم (2)</div>
     </div>
-
-    <button class="semester-btn" onclick="toggleSemester('second-sem')">📗 Second Semester</button>
-    <div class="semester-section" id="second-sem">
-      <div class="subject-list">
-        <ul>
-          <li>برمجة حاسوب (2)</li>
-          <li>تصميم رقمي تتابعي</li>
-          <li>الكترونيات (1) عملي</li>
-          <li>الكترونيات (1)</li>
-          <li>معادلات تفاضلية عادية</li>
-          <li>جبر خطي</li>
-          <li>عمل تطوعي 60 ساعة</li>
-        </ul>
-      </div>
+    <div class="semester" onclick="toggleSubjects('sem2')">📙 Second Semester</div>
+    <div id="sem2" class="subject-list">
+      <div class="subject">البرمجة (2)</div>
+      <div class="subject">تصميم رقمي تتابعي</div>
+      <div class="subject">الالكترونيات الرقمية (1)</div>
+      <div class="subject">إلكترونيات (1) عملي </div>
+      <div class="subject">معادلات تفاضلية عادية</div>
+      <div class="subject">جبر خطي</div>
+      <div class="subject">عمل تطوعي 60 ساعة</div>
     </div>
   </div>
-
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menuList');
       menu.classList.toggle('show');
-    }
+    }function toggleSubjects(id) {
+  const element = document.getElementById(id);
+  const allLists = document.querySelectorAll('.subject-list');
+  allLists.forEach(list => {
+    if (list !== element) list.style.display = 'none';
+  });
+  element.style.display = element.style.display === 'flex' ? 'none' : 'flex';
+}
 
-    function toggleSemester(id) {
-      const section = document.getElementById(id);
-      section.style.display = section.style.display === 'block' ? 'none' : 'block';
-    }
   </script>
 </body>
 </html>
